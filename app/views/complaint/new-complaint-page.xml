@@ -1,0 +1,24 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+  <ActionBar title="New Complaint" />
+  
+  <ScrollView>
+    <StackLayout class="p-4 space-y-4">
+      <Label text="Title" class="text-lg font-bold" />
+      <TextField text="{{ title }}" hint="Enter complaint title" class="input" />
+      
+      <Label text="Description" class="text-lg font-bold" />
+      <TextView text="{{ description }}" hint="Describe the issue" class="input h-32" />
+      
+      <Label text="Category" class="text-lg font-bold" />
+      <ListPicker items="{{ categories }}" selectedIndex="{{ selectedCategoryIndex }}" />
+      
+      <Button text="Take Photo" tap="{{ onTakePhoto }}" class="btn btn-primary" />
+      <Image src="{{ imageAsset }}" class="w-full h-48" visibility="{{ imageAsset ? 'visible' : 'collapsed' }}" />
+      
+      <Button text="Get Location" tap="{{ onGetLocation }}" class="btn btn-secondary" />
+      <Label text="{{ locationText }}" class="text-sm text-gray-600" textWrap="true" />
+      
+      <Button text="Submit Complaint" tap="{{ onSubmit }}" class="btn btn-success" />
+    </StackLayout>
+  </ScrollView>
+</Page>
